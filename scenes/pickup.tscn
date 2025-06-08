@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://culty7n7260ol"]
+
+[ext_resource type="Script" uid="uid://canbreb1bjald" path="res://scripts/pickup.gd" id="1_7cqbe"]
+[ext_resource type="Texture2D" uid="uid://cipwqhpl35xid" path="res://addons/PickupSprites/1 Icons/Icons_12.png" id="1_pg2rt"]
+[ext_resource type="AudioStream" uid="uid://bb4sskk8kgrt8" path="res://music/power-up-type-1-230548.mp3" id="3_gyxxy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7cqbe"]
+atlas = ExtResource("1_pg2rt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gyxxy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7cqbe")
+}],
+"loop": true,
+"name": &"Soul",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4m06l"]
+radius = 9.05539
+
+[node name="Pickup" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_7cqbe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1.5, 6)
+scale = Vector2(0.65625, 0.625)
+sprite_frames = SubResource("SpriteFrames_gyxxy")
+animation = &"Soul"
+autoplay = "Soul"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 6)
+shape = SubResource("CircleShape2D_4m06l")
+
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_gyxxy")
+bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

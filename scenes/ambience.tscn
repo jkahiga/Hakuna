@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6puar6xv0uvj"]
+
+[ext_resource type="AudioStream" uid="uid://tsthd58uqgvd" path="res://music/nature-ambience-323729.mp3" id="1_hu8jf"]
+
+[node name="Ambience" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_hu8jf")
+autoplay = true
+bus = &"Ambience"
