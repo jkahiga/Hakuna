@@ -2,7 +2,7 @@
 
 [ext_resource type="AudioStream" uid="uid://ca06ow3vnjbt0" path="res://music/avant-la-pluie-arnito-main-version-03-23-14429.mp3" id="1_f6gl3"]
 
-[node name="Music" type="AudioStreamPlayer2D"]
+[node name="BG_Music" type="AudioStreamPlayer"]
 stream = ExtResource("1_f6gl3")
 autoplay = true
 bus = &"Background"

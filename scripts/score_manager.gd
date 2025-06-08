@@ -6,6 +6,6 @@ var score = 0
 
 func add_point():
 	score += 1
-	soul_score.text = str(score)
+	soul_score.text = str(score) + " Soul Collected! He releases you!"
 	
 	

@@ -35,8 +35,8 @@ func _physics_process(delta: float) -> void:
 	else: 
 		animated_sprite.play("Walk")
 		
-	if Input.is_action_pressed("Run"):
-			animated_sprite.play("Run") 
+	if Input.is_action_pressed("Run"): 
 			velocity.x = direction * RUN_SPEED
+			animated_sprite.play("Run")
 
 	move_and_slide()

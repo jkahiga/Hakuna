@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1tm4omyv0dpp"]
+[gd_scene load_steps=8 format=3 uid="uid://c1tm4omyv0dpp"]
 
+[ext_resource type="Script" uid="uid://b7tlyea764qmd" path="res://scripts/river.gd" id="1_manwy"]
 [ext_resource type="Texture2D" uid="uid://gejeecxucmuv" path="res://addons/WaterSprites/ActualWater/Foozle_2DT0006_Critters_Tileset_3_LazyRiver_Pixel_Art/Animated Tiles/Water/Desaturated - background/PNGs/Water Tile.png" id="1_s00bq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_manwy"]
@@ -38,7 +39,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="River" type="AnimatableBody2D"]
+[node name="River" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_manwy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(16.5, 0)
@@ -46,4 +49,6 @@ scale = Vector2(2.03125, 1)
 sprite_frames = SubResource("SpriteFrames_lc7dt")
 animation = &"new_animation"
 autoplay = "new_animation"
-frame_progress = 0.518413
+frame_progress = 0.527275
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

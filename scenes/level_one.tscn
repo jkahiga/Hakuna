@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bluyewouolgj1"]
+[gd_scene load_steps=39 format=3 uid="uid://bluyewouolgj1"]
 
 [ext_resource type="PackedScene" uid="uid://c2bfepewggk8l" path="res://scenes/player.tscn" id="1_cd1xg"]
 [ext_resource type="Script" uid="uid://c227xsrethlw3" path="res://scripts/score_manager.gd" id="1_lgrt7"]
@@ -14056,6 +14056,8 @@ _data = {
 &"RESET": SubResource("Animation_036lt")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_unjau"]
+
 [node name="LevelOne" type="Node2D"]
 
 [node name="ScoreManager" type="Node" parent="."]
@@ -14063,8 +14065,10 @@ unique_name_in_owner = true
 script = ExtResource("1_lgrt7")
 
 [node name="SoulScore" type="Label" parent="ScoreManager"]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 3074.0
+offset_top = -214.0
+offset_right = 3114.0
+offset_bottom = -191.0
 
 [node name="DeathZone" parent="." instance=ExtResource("8_y8ti4")]
 position = Vector2(411, 173)
@@ -14170,6 +14174,9 @@ position = Vector2(2459, -467)
 
 [node name="River" parent="." instance=ExtResource("15_w4tp6")]
 position = Vector2(3074, -101)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="River"]
+shape = SubResource("RectangleShape2D_unjau")
 
 [node name="Instructions" type="Node" parent="."]
 

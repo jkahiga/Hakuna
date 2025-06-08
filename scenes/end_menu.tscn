@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://jv4gmujynt3a"]
+
+[ext_resource type="Script" uid="uid://dbd83g3hkuv6l" path="res://scripts/end_menu.gd" id="1_c01dn"]
+[ext_resource type="Texture2D" uid="uid://817e7oxl6mpp" path="res://addons/BackgroundSprites/nature_1/orig.png" id="2_fpl1s"]
+
+[node name="EndMenu" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_c01dn")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(577, 324)
+scale = Vector2(1.99653, 2.01235)
+texture = ExtResource("2_fpl1s")
+
+[node name="StartAgain" type="Button" parent="."]
+offset_left = 456.0
+offset_top = 271.0
+offset_right = 742.0
+offset_bottom = 352.0
+text = "Start Again"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 501.0
+offset_top = 396.0
+offset_right = 686.0
+offset_bottom = 464.0
+text = "Quit"
+
+[connection signal="pressed" from="StartAgain" to="." method="_on_start_again_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
